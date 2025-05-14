@@ -100,9 +100,9 @@
           <h5><i class="bi bi-currency-exchange"></i> Price Range</h5>
           <div
             v-for="(range, index) in [
-              '0-150000',
-              '150000-300000',
-              '300000-20000000',
+              '0-1500000',
+              '1500000-3000000',
+              '3000000-20000000',
             ]"
             :key="index"
             class="d-flex align-items-center"
