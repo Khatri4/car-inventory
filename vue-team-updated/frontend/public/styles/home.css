@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #a50000, #000000);
+    color: white;
+    padding: 0;
+  }
+  
+  .container-main {
+    padding: 60px 40px;
+  }
+  
+  h1 {
+    font-size: 72px;
+    font-weight: 800;
+  }
+  
+  .subheading {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ff9999;
+    margin-top: 10px;
+  }
+  
+  .product-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  .product-description {
+    font-size: 16px;
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .btn-description {
+    background-color: #660000;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+  }
+  
+  .btn-description:hover {
+    background-color: #4d0000;
+  }
+  
+  .car-image {
+    max-height: 360px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: transform 0.6s ease;
+  }
+  
+  .carousel-item {
+    transition: transform 0.8s ease-in-out;
+  }
+  
+  .price-section {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  .price {
+    font-size: 40px;
+    font-weight: 800;
+  }
+  
+  @media (max-width: 768px) {
+    .container-main {
+      padding: 30px 20px;
+      text-align: center;
+    }
+  
+    h1 {
+      font-size: 48px;
+    }
+  
+    .subheading {
+      font-size: 24px;
+    }
+  
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .product-description {
+      max-width: 100%;
+    }
+  }
+  
+   
