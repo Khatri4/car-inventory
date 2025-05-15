@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import axios from 'axios';
+import axios from "axios";
 
 export const useCarStore = defineStore("carStore", {
   state: () => ({
@@ -16,7 +16,6 @@ export const useCarStore = defineStore("carStore", {
         console.error("Failed to fetch cars:", error);
       }
     },
-
 
     async addCar(carData, images = []) {
       try {
@@ -69,14 +68,18 @@ export const useCarStore = defineStore("carStore", {
     },
     async updateCar(carId, updatedData) {
       try {
-        const response = await fetch(`http://localhost:5050/api/cars/${carId}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(updatedData),
-        });
-    
-        if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    
+        const response = await fetch(
+          `http://localhost:5050/api/cars/${carId}`,
+          {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updatedData),
+          }
+        );
+
+        if (!response.ok)
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+
         return await response.json();
       } catch (error) {
         console.error("Failed to update car details:", error);
@@ -84,41 +87,6 @@ export const useCarStore = defineStore("carStore", {
       }
     },
 
-    // async updateCar(id, carData, imageFiles) {
-    //   const formData = new FormData();
-    
-    //   for (const key in carData) {
-    //     formData.append(key, carData[key]);
-    //   }
-    
-    //   imageFiles.forEach((file) => {
-    //     formData.append('images', file); // 'images' matches the multer field name
-    //   });
-    
-    //   try {
-    //     const response = await fetch(`http://localhost:5050/api/cars/${id}`, {
-    //       method: "PUT",
-    //       body: formData,
-    //     });
-    
-    //     if (!response.ok) {
-    //       const errText = await response.text();
-    //       throw new Error(`HTTP ${response.status}: ${errText}`);
-    //     }
-    
-    //     const updatedCar = await response.json();
-    //     this.selectedCar = updatedCar;
-    
-    //     await this.fetchCars(); 
-    
-    //     return updatedCar;
-    //   } catch (error) {
-    //     console.error("Failed to update car:", error);
-    //     throw error;
-    //   }
-    // },
-    
-    
     setSelectedCar(car) {
       this.selectedCar = car;
     },
